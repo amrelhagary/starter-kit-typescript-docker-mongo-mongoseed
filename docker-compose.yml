@@ -1,0 +1,25 @@
+version: "3.5"
+services:
+   api:
+     environment:
+       - ENV=dev
+       - NODE_ENV=dev
+     build: .
+     volumes:
+       - ./:/app
+     ports:
+       - "4242:4242"
+     links:
+       - mongodb
+  
+   mongo-seed:
+    build: ./mongo-seed
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+
+   mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"

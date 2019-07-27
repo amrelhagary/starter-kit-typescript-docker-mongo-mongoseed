@@ -1,0 +1,17 @@
+{
+    "verbose": true,
+    "transform": {
+        "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "collectCoverageFrom": ["src/**/*.{ts,tsx}", "!**/node_modules/**", "!**/vendor/**", "!**/dist/**"],
+    "coverageDirectory": "./coverage",
+    "coverageReporters": ["json", "lcov", "text"],
+    "rootDir": "./",
+    "testEnvironment": "node",
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.(ts|tsx)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
